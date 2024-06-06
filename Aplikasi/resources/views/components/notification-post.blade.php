@@ -8,19 +8,20 @@
 ])
 
 <div {{ $attributes->merge(['class' => 'flex gap-6 px-4 py-2 border-b border-b-gray-400']) }}>
-    <a href="{{ route('question.show', [$questionId]) }}">
-        <div>
+    <div class="flex-shrink-0">
+        <a class="text-base hover:underline" href="{{ route('user', $username) }}">
             <x-user-avatar :avatar="$avatar" class="flex-shrink-0" />
-            <div class="text-white">
-                <header class="flex items-center">
-                    <p class="text-base">
-                        <a href="{{ route('user', [$username]) }}"
-                            class="text-gray-200 hover:underline">{{ $name }}</a>
-                        mengomentari postingan anda
-                    </p>
-                </header>
-                <p class="text-base">{{ $text }}</p>
-            </div>
+        </a>
+    </div>
+
+    <div class="text-white">
+        <div class="flex items-center">
+            <p class="text-base">
+                <a href="{{ route('user', [$username]) }}"
+                    class="text-gray-200 hover:underline">{{ $name }}</a>
+                mengomentari postingan anda
+            </p>
         </div>
-    </a>
+        <a class="text-base hover:underline" href="{{ route('question.show', [$questionId]) }}">{{ $text }}</a>
+    </div>
 </div>

@@ -5,8 +5,8 @@
 @endphp
 
 <x-app-layout title="Profil">
-    <div class="flex gap-10">
-        <div>
+    <div class="flex gap-10 pt-2">
+        <div class="flex-shrink-0">
             <x-user-avatar :avatar="$user['profile_img']"
                 class="!size-40" />
             @if ($user['username'] === Auth::user()->username)
@@ -16,7 +16,7 @@
             @endif
         </div>
 
-        <div class="text-white pt-1">
+        <div class="text-white pt-1 break-all">
             <h2 class="text-2xl">{{ $user['name'] }}</h2>
             <p class="text-base text-gray-400 mb-4">{{ $user['username'] }}</p>
             <p class="flex items-center gap-2 mb-4">

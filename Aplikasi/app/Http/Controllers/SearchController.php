@@ -19,11 +19,11 @@ class SearchController extends Controller
         $query = request()->query('q');
 
         if ($show === "questions") {
-            $questions = $query ? Question::with(['user'])->where('text', 'like', "%$query%")->orderByDesc('updated_at')->get() : false;
-            return view('search', compact('questions', 'query'));
+            $results = $query ? Question::with(['user'])->where('text', 'like', "%$query%")->orderByDesc('updated_at')->get() : false;
+            return view('search', compact('results', 'show', 'query'));
         } elseif ($show === "users") {
-            $users = $query ? User::whereAny(['name', 'username'], 'like', "%$query%")->orderByDesc('updated_at')->get() : false;
-            return view('search', compact('users', 'query'));
+            $results = $query ? User::whereAny(['name', 'username'], 'like', "%$query%")->orderByDesc('updated_at')->get() : false;
+            return view('search', compact('results', 'show', 'query'));
         }
         return response()->view('404', [], 404);
     }

@@ -8,7 +8,7 @@
         @method('patch')
 
         <label for="profile_img">
-            <div class="relative w-max cursor-pointer">
+            <div class="text-gray-900 relative w-max cursor-pointer">
                 <x-user-avatar :avatar="$user->profile_img" class="!size-24" />
                 @svg('heroicon-o-camera', ['class' => 'size-8 p-1 bg-neutral-300 rounded-full absolute -bottom-2 -right-2'])
             </div>

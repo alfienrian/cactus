@@ -19,7 +19,7 @@
         <p class="text-neutral-400">Semua balasan yang terkait</p>
     </div>
 
-    <div class="flex flex-col gap-8 mt-4 pb-[100px]">
+    <div class="flex flex-col gap-8 mt-4 pb-[120px]">
         @foreach ($answers as $answer)
             <x-cactus-post 
                 :name="$answer['user']['name']" 

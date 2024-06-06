@@ -28,8 +28,9 @@ class QuestionController extends Controller
             ],
             [
                 'question' => 'Tulis pertanyaan yang ingin kamu tanyakan...',
+                'question.max' => 'Maaf kamu hanya bisa menulis pertanyaan maksimal 450 karakter',
                 'question_image.max' => 'Ukuran gambar terlalu besar! maks 1 Mb',
-                'question_image' => "File yang kamu kirim bukan format gambar"
+                'question_image.image' => "File yang kamu kirim bukan format gambar"
             ],
         );
 
@@ -59,10 +60,11 @@ class QuestionController extends Controller
     public function answer(string $id, Request $request)
     {
         $request->validate([
-            'answer' => ["required", "string"],
+            'answer' => ["required", "string", "max:450"],
             'user_id' => ["required", "numeric"],
         ], [
-            'answer' => 'Input jawaban tidak boleh kosong'
+            'answer' => 'Input jawaban tidak boleh kosong',
+            'answer.max' => 'Maaf kamu hanya bisa menulis jawaban maksimal 450 karakter'
         ]);
 
         $answer = Answer::create([

@@ -32,8 +32,13 @@
 
 <div {{ $attributes }}>
     <article class="flex gap-6 group">
-        <x-user-avatar :avatar="$avatar" class="flex-shrink-0" :size="$size" />
-        <div class="dark:text-white w-full">
+        <div class="flex-shrink-0">
+            <a class="text-base hover:underline" href="{{ route('user', $username) }}">
+                <x-user-avatar :avatar="$avatar" class="flex-shrink-0" :size="$size" />
+            </a>
+        </div>
+
+        <div class="text-white w-full">
             <header class="flex gap-4 items-center">
                 <a class="text-lg text-gray-200 hover:underline"
                     href="{{ route('user', [$username]) }}">{{ $name }}</a>

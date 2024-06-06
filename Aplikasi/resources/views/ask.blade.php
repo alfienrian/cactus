@@ -6,10 +6,10 @@
 
             <div class="relative">
                 <p class="text-lg text-white mb-2 ml-1">{{ Auth::user()->name }}</p>
-                <textarea x-data @keyup.ctrl.enter="$event.target.form.submit()" class="bg-transparent rounded-md" name="question"
-                    cols="45" rows="8" placeholder="Tulis Pertanyaanmu Disini..."></textarea>
-                <label for="ask-attachment" class="flex items-center gap-2 absolute bottom-4 left-4">
-                    <div class="relative w-max cursor-pointer flex items-center gap-2">
+                <textarea x-data @keyup.ctrl.enter="$event.target.form.submit()" class="bg-transparent rounded-md pb-12" name="question"
+                    cols="60" rows="10" placeholder="Tulis Pertanyaanmu Disini..."></textarea>
+                <label for="ask-attachment" class="flex items-center gap-2 absolute bottom-2 left-2 bg-gray-950 w-[94%] py-3 pl-2">
+                    <div class="cursor-pointer flex items-center gap-2">
                         @svg('heroicon-o-photo', ['class' => 'size-6'])
                         <span>Lampirkan gambar</span>
                     </div>

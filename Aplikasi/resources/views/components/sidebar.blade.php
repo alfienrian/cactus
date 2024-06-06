@@ -5,7 +5,7 @@
 @endphp
 
 <aside class="w-[300px] max-h-screen sticky top-0 border-l-gray-800 border-s-2">
-    <div class="rounded-lg m-4 p-8 border border-gray-600 dark:text-white text-center">
+    <div class="rounded-lg m-4 p-8 border border-gray-600 text-white text-center">
         <x-user-avatar :avatar="$user->profile_img" class="mb-2 mx-auto" />
 
         <h2 class="text-lg">{{ $user->name ?? "" }}</h2>

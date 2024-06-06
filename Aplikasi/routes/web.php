@@ -10,12 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (Auth::check()) return view('index');
-    return view('auth.login');
+    return redirect()->route('home', [], 302);
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::get('/user/{username}', [ProfileController::class, 'index'])->name('user');
 

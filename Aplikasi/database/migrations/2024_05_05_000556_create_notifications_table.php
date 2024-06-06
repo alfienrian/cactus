@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Answer::class);
-            $table->boolean('is_seen');
             $table->timestamp('created_at');
         });
     }
