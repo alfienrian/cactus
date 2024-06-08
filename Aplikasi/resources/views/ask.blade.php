@@ -1,6 +1,6 @@
 <x-app-layout title="Tanya">
     <div class="flex gap-6 mt-12 ml-8 text-white">
-        <x-user-avatar :avatar="Auth::user()->profile_img" />
+        <x-user-avatar :avatar="Auth::user()->profile_img" class="flex-shrink-0" />
         <form action="/ask" method="POST" enctype="multipart/form-data">
             @csrf
 

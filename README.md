@@ -15,19 +15,59 @@ Sprint 1
 >Dokumentasi : deskripsi dan laporan uji coba aplikasi
 
 ### Requirements
+- Node.js 20.12+
+- PHP 8.2+
+- Composer 2.7+
+- npm 10.5+
 
-* node 8+
-* php 7+
-* composer 1.9+
-* yarn 1.13+ _or npm 6.4+_
+Jika belum mempunyai Node.js atau Composer, silakan untuk mengunduh dari website resminya:
+- Node.js: https://nodejs.org (https://nodejs.org/)
+- Composer: https://getcomposer.org (https://getcomposer.org/)
 
 ### Installation
-> cara instalasi
+1. Clone repositori dari GitHub:
+```bash
+git clone https://github.com/alfienrian/cactus
+```
+
+2. Masuk ke direktori aplikasi project laravel
+```bash
+cd cactus/Aplikasi
+```
+
+3. Install dependencies PHP menggunakan Composer:
+```bash
+composer install
+```
+
+4. Install dependencies JavaScript menggunakan npm:
+```bash
+npm install
+```
+
+5. Salin file .env.example lalu rename file menjadi .env:
+```bash
+cp .env.example .env
+```
+
+6. Generate key aplikasi Laravel:
+```bash
+php artisan key:generate
+```
+
+7. Jalankan migrasi dan buat skema database:
+```bash
+php artisan migrate
+```
 
 ## [Usage](#usage)
-> 
-
+Untuk menggunakan aplikasi Cactus jalankan server development dengan cara mengetik perintah :
+```bash
+npm run dev
+```
+berjalan dan buka browser ke http://localhost:8000.
 
 ## [Configuration](#configuration)
-> konfigurasi yang dibutuhkan jika ada
+Konfigurasi proyek Laravel dapat diatur di file .env. Pastikan untuk menyesuaikan pengaturan basis data, caching, dan konfigurasi lainnya sesuai kebutuhan.
+
 

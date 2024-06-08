@@ -78,7 +78,6 @@ class QuestionController extends Controller
             Notification::create([
                 'user_id' => $request->user_id,
                 'answer_id' => $answer->id,
-                'is_seen' => false,
                 'created_at' => now()
             ]);
         }

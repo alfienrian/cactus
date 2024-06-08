@@ -9,14 +9,14 @@
         <a href="{{ route('search.show', ['show' => 'users', 'q' => $query]) }}">Pengguna</a>
     </div>
 
-    <div class="flex flex-col gap-2 mt-4">
+    <div class="flex flex-col gap-4 mt-4">
         @if ($query)
             @if ($results->count() !== 0)
                 @foreach ($results as $q)
                     @if ($show === 'questions')
                         <x-cactus-post :name="$q['user']['name']" :username="$q['user']['username']" :avatar="$q['user']['profile_img']"
                             :date="$q['updated_at']" :text="$q['text']" :repliesCount="$q->answers->count()" :id="$q['id']"
-                            type="questions" />
+                            type="question" :image="$q['image']" />
                     @elseif ($show === 'users')
                         <x-user-list :name="$q['name']" :username="$q['username']" :avatar="$q['profile_img']" />
                     @endif
